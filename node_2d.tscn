@@ -41,5 +41,5 @@ script = SubResource("GDScript_wtcfe")
 shape = SubResource("CircleShape2D_wtcfe")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(5, -6)
+position = Vector2(452, 179)
 texture = ExtResource("2_epypp")

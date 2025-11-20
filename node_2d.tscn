@@ -54,6 +54,11 @@ script = SubResource("GDScript_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(142, 189)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_wtcfe")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(452, 179)
 texture = ExtResource("2_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brnmxlapfheip" path="res://icon.svg" id="2_epypp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
-size = Vector2(395, 115)
+size = Vector2(676, 115)
 
 [sub_resource type="GDScript" id="GDScript_wtcfe"]
 script/source = "extends CharacterBody2D
@@ -46,7 +46,7 @@ scale = Vector2(3.1953125, 1)
 texture = ExtResource("2_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(217.5, 443.5)
+position = Vector2(358, 443.5)
 shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

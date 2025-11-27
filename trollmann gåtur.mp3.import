@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cv5x3vg6gmasn"
+path="res://.godot/imported/trollmann gåtur.mp3-0b4e92c57b5187c2630c4b86c900753f.mp3str"
+
+[deps]
+
+source_file="res://trollmann gåtur.mp3"
+dest_files=["res://.godot/imported/trollmann gåtur.mp3-0b4e92c57b5187c2630c4b86c900753f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

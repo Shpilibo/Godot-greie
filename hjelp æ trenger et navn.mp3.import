@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo0gt6ox4f1l8"
+path="res://.godot/imported/hjelp æ trenger et navn.mp3-e08874c628422f950af0d060433c803b.mp3str"
+
+[deps]
+
+source_file="res://hjelp æ trenger et navn.mp3"
+dest_files=["res://.godot/imported/hjelp æ trenger et navn.mp3-e08874c628422f950af0d060433c803b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

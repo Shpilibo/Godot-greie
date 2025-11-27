@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bft3qktqvkx8r"
+path="res://.godot/imported/spiss hatt.mp3-7b2beb6b3be01e45e59432bbf6d7b85f.mp3str"
+
+[deps]
+
+source_file="res://spiss hatt.mp3"
+dest_files=["res://.godot/imported/spiss hatt.mp3-7b2beb6b3be01e45e59432bbf6d7b85f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

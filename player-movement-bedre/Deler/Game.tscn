@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b73nbio6op1kr"]
+
+[ext_resource type="Texture2D" uid="uid://b3v8142883j3d" path="res://icon.svg" id="1_fhsqp"]
+
+[node name="Game" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Level" type="Node2D" parent="World"]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Level"]
+position = Vector2(578, 576)
+scale = Vector2(9.09375, 1)
+texture = ExtResource("1_fhsqp")

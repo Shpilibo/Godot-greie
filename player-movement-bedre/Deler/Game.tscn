@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b73nbio6op1kr"]
+[gd_scene load_steps=16 format=3 uid="uid://b73nbio6op1kr"]
 
 [ext_resource type="Texture2D" uid="uid://b3v8142883j3d" path="res://icon.svg" id="1_fhsqp"]
 [ext_resource type="PackedScene" uid="uid://meici6hldptu" path="res://Deler/karakter.tscn" id="2_iv8rr"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c8ixn6rh1y8q7" path="res://Components/input_components.tscn" id="4_mtptp"]
 [ext_resource type="PackedScene" uid="uid://dtwbmrrecjmun" path="res://Components/movement_component.tscn" id="5_53xsx"]
 [ext_resource type="PackedScene" uid="uid://owrig68rv5hd" path="res://Components/jump_component.tscn" id="6_5qo4y"]
+[ext_resource type="Script" uid="uid://bplhxv7ksndsk" path="res://Deler/player_2.gd" id="7_hsgdf"]
+[ext_resource type="Script" uid="uid://mq5ik64pbw8i" path="res://Components/gravity_componentsplayer2.gd" id="8_mtptp"]
+[ext_resource type="Script" uid="uid://nmif7of3wvl6" path="res://Components/input_componentsplayer2.gd" id="9_53xsx"]
+[ext_resource type="Script" uid="uid://bh74g207fed5q" path="res://Components/movement_componentsplayer2.gd" id="10_5qo4y"]
+[ext_resource type="Script" uid="uid://cifji7cm821iy" path="res://Components/jump_componentsplayer2.gd" id="11_oq8j2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fhsqp"]
 
@@ -45,20 +50,47 @@ texture = ExtResource("1_fhsqp")
 position = Vector2(581.5, 586)
 shape = SubResource("RectangleShape2D_savgw")
 
-[node name="Karakter" parent="." instance=ExtResource("2_iv8rr")]
+[node name="Player 1" parent="." instance=ExtResource("2_iv8rr")]
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Karakter"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player 1"]
 position = Vector2(656, 296)
 sprite_frames = SubResource("SpriteFrames_oq8j2")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Karakter"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player 1"]
 position = Vector2(657, 296)
 shape = SubResource("CapsuleShape2D_wkl3a")
 
-[node name="GravityComponents2" parent="Karakter" instance=ExtResource("3_hsgdf")]
+[node name="GravityComponents2" parent="Player 1" instance=ExtResource("3_hsgdf")]
 
-[node name="InputComponents2" parent="Karakter" instance=ExtResource("4_mtptp")]
+[node name="InputComponents2" parent="Player 1" instance=ExtResource("4_mtptp")]
 
-[node name="MovementComponent2" parent="Karakter" instance=ExtResource("5_53xsx")]
+[node name="MovementComponent2" parent="Player 1" instance=ExtResource("5_53xsx")]
 
-[node name="JumpComponent2" parent="Karakter" instance=ExtResource("6_5qo4y")]
+[node name="JumpComponent2" parent="Player 1" instance=ExtResource("6_5qo4y")]
+
+[node name="Player 2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("gravity_component", "input_component", "movement_component", "jump_component")]
+script = ExtResource("7_hsgdf")
+gravity_component = NodePath("GravityComponents2")
+input_component = NodePath("InputComponents2")
+movement_component = NodePath("MovementComponent2")
+jump_component = NodePath("JumpComponent2")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player 2"]
+position = Vector2(961, 264)
+sprite_frames = SubResource("SpriteFrames_oq8j2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player 2"]
+position = Vector2(965, 268)
+shape = SubResource("CapsuleShape2D_wkl3a")
+
+[node name="GravityComponents2" parent="Player 2" instance=ExtResource("3_hsgdf")]
+script = ExtResource("8_mtptp")
+
+[node name="InputComponents2" parent="Player 2" instance=ExtResource("4_mtptp")]
+script = ExtResource("9_53xsx")
+
+[node name="MovementComponent2" parent="Player 2" instance=ExtResource("5_53xsx")]
+script = ExtResource("10_5qo4y")
+
+[node name="JumpComponent2" parent="Player 2" instance=ExtResource("6_5qo4y")]
+script = ExtResource("11_oq8j2")

@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b73nbio6op1kr"]
+[gd_scene load_steps=11 format=3 uid="uid://b73nbio6op1kr"]
 
 [ext_resource type="Texture2D" uid="uid://b3v8142883j3d" path="res://icon.svg" id="1_fhsqp"]
+[ext_resource type="PackedScene" uid="uid://meici6hldptu" path="res://Deler/karakter.tscn" id="2_iv8rr"]
+[ext_resource type="PackedScene" uid="uid://b0s1hg2h46s3v" path="res://Components/Gravity_components.tscn" id="3_hsgdf"]
+[ext_resource type="PackedScene" uid="uid://c8ixn6rh1y8q7" path="res://Components/input_components.tscn" id="4_mtptp"]
+[ext_resource type="PackedScene" uid="uid://dtwbmrrecjmun" path="res://Components/movement_component.tscn" id="5_53xsx"]
+[ext_resource type="PackedScene" uid="uid://owrig68rv5hd" path="res://Components/jump_component.tscn" id="6_5qo4y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fhsqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_savgw"]
+size = Vector2(1151, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq8j2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fhsqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkl3a"]
+radius = 62.0
+height = 126.0
 
 [node name="Game" type="Node2D"]
 
@@ -8,7 +33,32 @@
 
 [node name="Level" type="Node2D" parent="World"]
 
-[node name="Sprite2D" type="Sprite2D" parent="World/Level"]
-position = Vector2(578, 576)
-scale = Vector2(9.09375, 1)
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Level"]
+physics_material_override = SubResource("PhysicsMaterial_fhsqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Level/StaticBody2D"]
+position = Vector2(581, 587)
+scale = Vector2(8.984375, 1)
 texture = ExtResource("1_fhsqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level/StaticBody2D"]
+position = Vector2(581.5, 586)
+shape = SubResource("RectangleShape2D_savgw")
+
+[node name="Karakter" parent="." instance=ExtResource("2_iv8rr")]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Karakter"]
+position = Vector2(656, 296)
+sprite_frames = SubResource("SpriteFrames_oq8j2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Karakter"]
+position = Vector2(657, 296)
+shape = SubResource("CapsuleShape2D_wkl3a")
+
+[node name="GravityComponents2" parent="Karakter" instance=ExtResource("3_hsgdf")]
+
+[node name="InputComponents2" parent="Karakter" instance=ExtResource("4_mtptp")]
+
+[node name="MovementComponent2" parent="Karakter" instance=ExtResource("5_53xsx")]
+
+[node name="JumpComponent2" parent="Karakter" instance=ExtResource("6_5qo4y")]
